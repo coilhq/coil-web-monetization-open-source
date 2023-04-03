@@ -1,0 +1,51 @@
+{
+  "name": "@coilhq/redeemer",
+  "version": "1.0.0",
+  "description": "Redeemer [ Anonymous token service ]",
+  "main": "dist/index.js",
+  "scripts": {
+    "node-dev": "REDEEMER_PORT=8088 SIGNER_PORT=8091 GRPC_HOST='localhost:6000' NODE_ENV=development ts-node-dev --transpile-only --respawn --inspect=${NODE_DEBUG_PORT:-9232} --files -- src/index.ts | ../../node_modules/.bin/pino-pretty -c -l -t",
+    "watch": "LOG_LEVEL=debug yarn node-dev",
+    "build": "tsc",
+    "start": "node --preserve-symlinks dist/index.js",
+    "format": "../../node_modules/.bin/prettier-standard 'src/**/*.ts'",
+    "test": "jest",
+    "lint": "../../node_modules/.bin/eslint --fix --max-warnings=28 \"src/**/*.ts\"",
+    "lint:check": "../../node_modules/.bin/eslint --max-warnings=28 \"src/**/*.ts\"",
+    "precommit": "lint-staged"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@coilhq/metrics": "workspace:*",
+    "@coilhq/redis": "workspace:*",
+    "@grpc/grpc-js": "1.6.11",
+    "@grpc/proto-loader": "0.6.13",
+    "body-parser": "^1.20.0",
+    "express": "4.18.1",
+    "ioredis": "4.28.5",
+    "jsonwebtoken": "^8.5.1",
+    "reduct": "^3.3.1",
+    "supertokens-node": "^9.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "../../node_modules/.bin/prettier-standard",
+      "../../node_modules/.bin/eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.2",
+    "@types/ioredis": "4.28.10",
+    "@types/jest": "^24.0.20",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "14.18.36",
+    "jest": "^24.9.0",
+    "lint-staged": "^11.2.6",
+    "ts-jest": "^24.1.0",
+    "ts-node": "10.9.1",
+    "ts-node-dev": "2.0.0",
+    "typescript": "^3.6.4"
+  }
+}

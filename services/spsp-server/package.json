@@ -1,0 +1,58 @@
+{
+  "name": "@coilhq/spsp-server",
+  "version": "0.0.1",
+  "description": "SPSP server for special coil integrations",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "lint": "../../node_modules/.bin/eslint --fix --max-warnings=110 \"src/**/*.ts\"",
+    "lint:check": "../../node_modules/.bin/eslint --max-warnings=110 \"src/**/*.ts\"",
+    "precommit": "lint-staged"
+  },
+  "author": "",
+  "dependencies": {
+    "@coilhq/metrics": "workspace:*",
+    "@google-cloud/bigquery": "6.0.2",
+    "@grpc/grpc-js": "1.6.11",
+    "@grpc/proto-loader": "0.6.13",
+    "axios": "^0.27.2",
+    "base64url": "^3.0.1",
+    "bignumber.js": "9.1.0",
+    "boom": "^7.3.0",
+    "dotenv": "^6.0.0",
+    "ilp-plugin": "^3.3.1",
+    "ilp-protocol-ildcp": "^2.0.0",
+    "ilp-protocol-stream": "^2.7.2-alpha.0",
+    "ilp-spsp-payout": "^1.2.0",
+    "ioredis": "4.28.5",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^7.4.0",
+    "node-cache": "^5.1.2",
+    "reduct": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/boom": "^7.3.2",
+    "@types/dotenv": "^6.1.1",
+    "@types/ioredis": "4.28.10",
+    "@types/jest": "^25.2.3",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.7",
+    "@types/koa-router": "^7.4.4",
+    "@types/nock": "^11.1.0",
+    "@types/node": "18.11.18",
+    "@types/through2": "^2.0.34",
+    "jest": "^26.0.1",
+    "lint-staged": "^11.2.6",
+    "nock": "^13.2.7",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.4.5"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "../../node_modules/.bin/eslint --fix"
+    ]
+  }
+}

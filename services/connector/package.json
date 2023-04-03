@@ -1,0 +1,33 @@
+{
+  "name": "@coilhq/connector",
+  "version": "1.0.0",
+  "description": "Connector designed to run in a k8s statefulset",
+  "main": "index.js",
+  "bin": {
+    "coil.com-connector": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "../../node_modules/.bin/eslint --fix --max-warnings=0 \"src/**/*.js\"",
+    "lint:check": "../../node_modules/.bin/eslint --max-warnings=0 \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@coilhq/ilp-plugin-flat-stacks": "workspace:*",
+    "ilp-connector": "~23.0.0",
+    "ilp-plugin-btp": "^1.3.5",
+    "ilp-plugin-http": "^1.4.0",
+    "ilp-plugin-mini-accounts": "^4.2.0"
+  },
+  "devDependencies": {
+    "lint-staged": "^11.2.6"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "@coilhq/cbs",
+  "version": "1.0.0",
+  "description": "key-rotation wrapper for challenge-bypass-server (this is a dummy package.json for CI)"
+}
